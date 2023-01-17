@@ -1,16 +1,13 @@
-#Param(
-#    [parameter(Mandatory=$true)]
-#    [String] $subscriptionId,
-#    [parameter(Mandatory=$true)]
-#    [String] $accountId
-#)
+Param(
+    [parameter(Mandatory=$true)]
+    [String] $subscriptionId,
+    [parameter(Mandatory=$true)]
+    [String] $accountId
+)
 
 Import-Module PSDates
 
 $errorActionPreference = "Stop"
-
-$subscriptionId = "9e15b045-0efb-4289-a18d-1a11052f1068"
-$accountId = "ca253b5f-34a8-4917-88e6-72f1617bebe1"
 
 # Globals used to collect starting / stopping VMs pools
 $global:vmJobListStop = @()
