@@ -11,7 +11,7 @@ and
 Current Functionality:
 
 - Start and stop VMs based on tags
-- Start and stop VMs based on a sequence tag in the resource group. For example: `sequence_start : 2`, `sequence_stop : 2`
+- Start and stop VMs based on a sequence tag on the resource. For example: `sequence_start : 2`, `sequence_stop : 2`
 - Exclusions from automation based on an exclusion tag and its value. For example:
   - exclude from automation: `automated_excl : both` 
   - exclude from automated startup: `automated_excl : start`  
