@@ -16,3 +16,5 @@ Current Functionality:
   - exclude from automation: `automated_excl : both` 
   - exclude from automated startup: `automated_excl : start`  
   - exclude from automated shut down: `automated_excl : stop`
+
+Current version is working within GTM Standard Time (British time with Daylight Savings). 
