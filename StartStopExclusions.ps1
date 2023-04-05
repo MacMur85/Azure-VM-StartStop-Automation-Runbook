@@ -53,10 +53,15 @@ function ManageVMPowerState{
     }
 }
 
-$currentTime = (Get-Date).ToUniversalTime()
+$currentTimeUTC = (Get-Date).ToUniversalTime()
 
 Write-Output "Runbook started..."
-Write-Output "Current UTC time: [$($currentTime.ToString("dddd, yyyy MMM dd HH:mm:ss"))] "
+Write-Output "Current UTC time: [$($currentTimeUTC.ToString("dddd, yyyy MMM dd HH:mm:ss"))] "
+
+$currentTime = [System.TimeZoneInfo]::ConvertTimeBySystemTimeZoneId($currentTimeUTC, 'GMT Standard Time')
+
+Write-Output "Current GMT Standard Time: [$($currentTime.ToString("dddd, yyyy MMM dd HH:mm:ss"))] "
+
 
 try
 {
