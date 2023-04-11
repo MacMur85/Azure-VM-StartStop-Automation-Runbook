@@ -130,14 +130,14 @@ try {
             Write-Output "[$($vm.Name)]: Stop schedule is: $stop_schedule"
 
             # See what the target stop time is for the VM on current schedule
-            $nextStopTime = Get-CronNextOccurrence "$stop_schedule"  -StartTime $currentTime.Date -EndTime $currentTime.Date.AddDays(1)
+            $nextStopTime = Get-CronNextOccurrence "$stop_schedule"  -StartTime $currentTime.Date # -EndTime $currentTime.Date.AddDays(1)
             Write-Output "[$($vm.Name)]: Target stop time is: $nextStopTime"
 
             # If VM has a start time and a stop time
             if ($has_start_schedule -eq $true) {
                 
                 # See what the target start time is for the VM on current schedule
-                $nextStartTime = Get-CronNextOccurrence "$start_schedule"  -StartTime $currentTime.Date -EndTime $currentTime.Date.AddDays(1)
+                $nextStartTime = Get-CronNextOccurrence "$start_schedule"  -StartTime $currentTime.Date # -EndTime $currentTime.Date.AddDays(1)
                 Write-Output "[$($vm.Name)]: Target start time is: $nextStartTime"
 
                 # If we are between the start and stop times the VM should be running
